@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<!-- PHP -->
+    function body_class() {}
+    function wp_title($a, $b, $c) {}
+    function bloginfo() {}
+    function get_bloginfo($a, $b) {}
+    function is_home() {}
+    function is_front_page() {}
+    function is_404() {}
+    $notwp = true;
+
+    include("../wp-content/themes/freeablo/header.php");
+<!-- ENDPHP -->
+
+<head>
+
+    <meta charset="{S_CONTENT_ENCODING}" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {META}
+    <title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+
+    <!-- IF S_ENABLE_FEEDS -->
+        <!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+        <!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+        <!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+        <!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+        <!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
+        <!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
+        <!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
+    <!-- ENDIF -->
+
+    <!--
+        phpBB style name: we_universal
+        Based on style:   prosilver (this is the default phpBB3 style)
+        Original author:  Tom Beddard ( http://www.subBlue.com/ )
+        Modified by:      Inventea ( http://inventea.com/ )
+    -->
+
+    <!-- PHP --> echo $facss; <!-- ENDPHP -->
+    <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+    <link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+
+    <!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+        <link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+    <!-- ENDIF -->
+
+    <script type="text/javascript">
+    // <![CDATA[
+        var jump_page = '{LA_JUMP_PAGE}:';
+        var on_page = '{ON_PAGE}';
+        var per_page = '{PER_PAGE}';
+        var base_url = '{A_BASE_URL}';
+        var style_cookie = 'phpBBstyle';
+        var style_cookie_settings = '{A_COOKIE_SETTINGS}';
+        var onload_functions = new Array();
+        var onunload_functions = new Array();
+
+        <!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+            var url = '{UA_POPUP_PM}';
+            window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
+        <!-- ENDIF -->
+
+        /**
+        * Find a member
+        */
+        function find_username(url)
+        {
+            popup(url, 780, 570, '_usersearch');
+            return false;
+        }
+
+        /**
+        * New function for handling multiple calls to window.onload and window.unload by pentapenguin
+        */
+        window.onload = function()
+        {
+            for (var i = 0; i < onload_functions.length; i++)
+            {
+                eval(onload_functions[i]);
+            }
+        };
+
+        window.onunload = function()
+        {
+            for (var i = 0; i < onunload_functions.length; i++)
+            {
+                eval(onunload_functions[i]);
+            }
+        };
+    // ]]>
+    </script>
+
+    <script src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
+</head>
+<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} home blog">
+
+<div id="wrapper" class="hfeed">
+
+<div id="header">
+<!-- PHP --> echo $faheader; <!-- ENDPHP -->
+</div>
+
+
+<div id="main">
+
+<div id="access" role="navigation" style="background: #525252">
+    <div class="menu-header">
+        <ul id="menu-menu-1" class="menu">
+            <li class="inventia-menu-item"><a style="color: #ffffff" href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
+            <!-- IF S_DISPLAY_SEARCH --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li><!-- ENDIF -->
+            <!-- IF U_TEAM --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li><!-- ENDIF -->
+
+            <!-- IF not S_IS_BOT -->
+                <!-- IF S_DISPLAY_MEMBERLIST --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+                <!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_REGISTER}" title="{L_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
+                <li class="inventia-menu-item"><a style="color: #ffffff" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
+            <!-- ENDIF -->
+        </ul>
+    </div>
+</div>
+
+<div id="access" role="navigation" style="margin-bottom: 10px; background: #525252">
+    <div class="menu-header">
+        <ul id="menu-menu-1" class="menu">
+
+            <!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+                <li class="inventia-menu-item"><a style="color: #ffffff" href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
+                <!-- IF S_DISPLAY_PM --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
+                <!-- IF S_DISPLAY_SEARCH --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li><!-- ENDIF -->
+                <!-- IF U_RESTORE_PERMISSIONS --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+                <!-- IF U_MCP --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
+                <!-- IF U_ACP --><li class="inventia-menu-item"><a style="color: #ffffff" href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
+            <!-- ENDIF -->
+        </ul>
+    </div>
+</div>
+    <span class="inventia-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></span>
+
+    <div class="inventia-breadcrumbs-container">
+        <ul class="inventia-breadcrumbs" style="margin: 0px;">
+            <li class="inventia-breadcrumbs-item"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+            
+            <!-- BEGIN navlinks -->
+                <li class="inventia-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
+            <!-- END navlinks -->
+        </ul>
+
+        <!-- IF S_WATCH_FORUM_LINK or U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or U_EMAIL_TOPIC or U_EMAIL_PM or U_PRINT_TOPIC or U_PRINT_PM -->
+            <div class="inventia-actions-menu">
+                <button class="inventia-toggle inventia-actions-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-cog"></i></button>
+
+                <ul class="inventia-dropdown-menu inventia-actions-dropdown-menu">
+                    <!-- IF not S_IS_BOT -->
+                        <!-- IF S_WATCH_FORUM_LINK --><li class="inventia-dropdown-menu-item"><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="fa fa-star fa-fw"></i> {S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+                        <!-- IF U_WATCH_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="fa fa-star fa-fw"></i> {L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+                        <!-- IF U_BOOKMARK_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="fa fa-bookmark fa-fw"></i> {L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+                        <!-- IF U_BUMP_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="fa fa-gavel fa-fw"></i> {L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+                    <!-- ENDIF -->
+
+                    <!-- IF U_EMAIL_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="fa fa-envelope fa-fw"></i> {L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+                    <!-- IF U_EMAIL_PM --><li class="inventia-dropdown-menu-item"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}"><i class="fa fa-envelope fa-fw"> {L_EMAIL_PM}</a></li><!-- ENDIF -->
+                    <!-- IF U_PRINT_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+                    <!-- IF U_PRINT_PM --><li class="inventia-dropdown-menu-item"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_PM}</a></li><!-- ENDIF -->
+                </ul>
+            </div>
+        <!-- ENDIF -->
+    </div>
+
+    <!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+        <div id="information" class="rules">
+            <div class="inner"><span class="corners-top"><span></span></span>
+                <strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
+            <span class="corners-bottom"><span></span></span></div>
+        </div>
+    <!-- ENDIF -->
+
+<!-- Start Google Analytics Tracker -->
+<script type="text/javascript">
+//<![CDATA[
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75632671-1', 'auto');
+  ga('send', 'pageview');
+
+//]]>
+</script>
+<!-- End Google Analytics Code -->

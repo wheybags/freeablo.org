@@ -1,0 +1,96 @@
+
+---------------------------
+Version: 1.0.26 :
+Prefixed some variables.
+
+---------------------------
+Version: 1.0.25 :
+CSS modifications.
+
+---------------------------
+Version: 1.0.24 :
+Deleted some unused code.
+
+---------------------------
+Version: 1.0.23 :
+Deleted some unused code.
+
+---------------------------
+Version: 1.0.22 :
+De enqueued jquery.
+
+---------------------------
+Version: 1.0.21 :
+Relocated some code.
+
+---------------------------
+Version: 1.0.20 :
+Deleted some unused code.
+
+---------------------------
+Version: 1.0.19 :
+Deleted some unused code.
+
+---------------------------
+Version: 1.0.18 :
+Modified widget sanitization function.
+
+---------------------------
+Version: 1.0.17 :
+Modified body class function.
+
+---------------------------
+Version: 1.0.16 :
+Added new skin.
+
+---------------------------
+Version: 1.0.15 :
+Changed wp title function.
+
+---------------------------
+Version: 1.0.14 :
+Added new skin.
+
+---------------------------
+Version: 1.0.13 :
+Added new skin.
+
+---------------------------
+Version: 1.0.12 :
+Added new skin.
+
+---------------------------
+Version: 1.0.10 :
+Added new skin.
+
+---------------------------
+Version: 1.0.9 :
+MOdified footer credit.
+
+---------------------------
+Version: 1.0.8 :
+Added new skin.
+
+---------------------------
+Version: 1.0.7 :
+Added new skin.
+
+---------------------------
+Version: 1.0.6 :
+Added new skin.
+
+---------------------------
+Version: 1.0.5 :
+Added new skin.
+
+---------------------------
+Version: 1.0.4 :
+Added new skin.
+
+---------------------------
+Version: 1.0.3 :
+Minor change to options framework. Using core checked and selected functions.
+
+---------------------------
+Version: 1.0.2 :
+Initial release.

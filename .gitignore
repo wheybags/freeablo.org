@@ -1,0 +1,4 @@
+content/forum/cache
+*.swp
+content/wp-config.php
+content/forum/config.php
