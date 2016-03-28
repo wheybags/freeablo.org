@@ -1,0 +1,143 @@
+/*
+Theme Name: Freeablo Theme
+Theme URI: http://freeablo.org
+Author: AndrewPH
+Author URI: http://hypertext.ml/
+Description: A custom Wordpress theme for the Freeablo project.
+Version: 1.0
+License: MIT License
+License URI: http://opensource.org/licenses/MIT
+Tags: black, brown, two-columns, right-sidebar, flexible-width, responsive
+Text Domain: freeablowp
+*/
+
+html, body {
+    font-family:"Vollkorn";
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family:"Vollkorn";
+}
+
+#top {
+    background-color:#444;
+    color:#eee;
+    background-image:url('/fa/images/banner.jpg');
+    background-position:center;
+    background-attachment:fixed;
+    background-size:cover;
+}
+
+#top h1 {
+    color:#fff;
+    text-shadow:0 1px 5px #111, 0 0px #111;
+}
+
+#top h1.big {
+    font-size:5rem;
+}
+
+#top p {
+    text-shadow:0 1px 1px #000;
+}
+
+#downloads {
+    padding-top:1.3rem;
+}
+
+.button.download {
+    background-color:transparent;
+    background-color: rgba(0,0,0,.5);
+    border-width:2px;
+    border-radius:3px;
+    border-color:#a03b3b;
+}
+
+.button.download:hover {
+    background-color:#c43030;
+}
+
+p {
+    font-size:1.2rem;
+}
+
+h2 {
+    color:#333;
+}
+
+#top, #about, #blog, #footer {
+    padding:20px 0;
+}
+
+#about {
+    background-color:#f0e7e7;
+}
+
+#about p {
+    color:#555;
+    text-shadow:0 1px rgba(0,0,0,.2);
+}
+
+#blog {
+    background-color:#fff;
+}
+
+#posts {
+    list-style:none;
+    margin:0;
+    padding:5px;
+}
+
+#posts li a.post-title {
+    color:#444;
+    border-bottom:1px solid #ccc;
+
+    font-size: 1.5em;
+    font-family:"Vollkorn";
+}
+
+#posts li h4.subheader {
+    color:#777;
+    font-size:1rem;
+}
+
+#posts li p {
+    margin-bottom:1.5rem;
+    padding:0;
+}
+
+#footer {
+    background-color:#222;
+    color:#777;
+}
+
+#footer a {
+    color:#777;
+    text-decoration:underline;
+}
+
+#footer a:hover {
+    color:#999;
+}
+
+#logodiv {
+    width: 500px;
+    height: 119px;
+    background: url('/fa/images/logo.png') left center;
+    -webkit-animation: play .4s steps(8) infinite;
+    -moz-animation: play .4s steps(8) infinite;
+    -ms-animation: play .4s steps(8) infinite;
+    -o-animation: play .4s steps(8) infinite;
+    animation: play .4s steps(8) infinite;
+}
+
+@-webkit-keyframes play { 100% { background-position: -4000px; } }
+@-moz-keyframes play { 100% { background-position: -4000px; } }
+@-ms-keyframes play { 100% { background-position: -4000px; } }
+@-o-keyframes play { 100% { background-position: -4000px; } }
+@keyframes play { 100% { background-position: -4000px; } }
+
+.rssicon
+{
+    height: 0.5em;
+}
