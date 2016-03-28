@@ -5,7 +5,7 @@
     <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
     <link href="<?php bloginfo('template_directory');?>/css/foundation.min.css" rel="stylesheet" type="text/css">
     <link href="<?php bloginfo('template_directory');?>/css/foundation-icons.css" rel="stylesheet" type="text/css">
-    <link href="<?php bloginfo('template_directory');?>/freeablo.css" rel="stylesheet" type="text/css">
+    <link href="<?php bloginfo('template_directory');?>/style.css" rel="stylesheet" type="text/css">
     <script src="<?php bloginfo('template_directory');?>/js/vendor/modernizr.js"></script>
     <script src="<?php bloginfo('template_directory');?>/js/vendor/jquery.js"></script>
     <script src="<?php bloginfo('template_directory');?>/js/foundation.min.js"></script>
@@ -21,9 +21,9 @@
                 <p>A work-in-progress free and open-source replacement for the Diablo I engine. Simply import the Diablo assets, and enjoy the same old game with faster performance and modern resolutions, and first class support for mods.</p>
             </div>
             <div class="small-12 medium-3 columns" id="downloads">
-                <a href="#" class="button expand download"><i class="fi-social-windows"></i> Windows</a>
-                <a href="#" class="button expand download"><i class="fi-archive"></i> Linux</a>
-                <a href="#" class="button expand download"><i class="fi-social-apple"></i> Mac OS</a>
+                <a href="https://github.com/wheybags/freeablo/releases" class="button expand download"><i class="fi-social-windows"></i> Windows</a>
+                <a href="https://github.com/wheybags/freeablo/releases" class="button expand download"><i class="fi-archive"></i> Linux</a>
+                <a href="https://github.com/wheybags/freeablo/releases" class="button expand download"><i class="fi-social-apple"></i> Mac OS</a>
             </div>
 
         </div>
